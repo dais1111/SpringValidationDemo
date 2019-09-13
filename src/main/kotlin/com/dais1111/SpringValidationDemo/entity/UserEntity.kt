@@ -8,14 +8,15 @@ import javax.validation.constraints.NotEmpty
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
-        include = JsonTypeInfo.As.WRAPPER_OBJECT,
-        property = "type"
+        include = JsonTypeInfo.As.EXISTING_PROPERTY,
+        property = "type",
+        visible = true
 )
 @JsonSubTypes(
     JsonSubTypes.Type(value = Parent::class, name ="Parent"),
     JsonSubTypes.Type(value = Child::class, name ="Child")
 )
-open class BaseEntity
+interface BaseEntity
 
 data class Parent(
         val type: Type,
@@ -27,7 +28,7 @@ data class Parent(
         val liveInPrefect: Prefecture,
         val premiumFlag: Boolean = false,
         val premiumPrice: Int? = null
-) : BaseEntity()
+) : BaseEntity
 
 data class Child(
         val type: Type,
@@ -41,4 +42,4 @@ data class Child(
         val liveInPrefect: Prefecture,
         val premiumFlag: Boolean = false,
         val premiumPrice: Int? = null
-) : BaseEntity()
+) : BaseEntity
