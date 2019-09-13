@@ -1,2 +1,3 @@
 # SpringValidationDemo
-manually call Spring Validator and Bean Validation, Jackson sample
+manually call Spring Validator and Bean Validation.<br/>
+JSON serialize/deserialize for multiple type data class by Jackson.
