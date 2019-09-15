@@ -20,7 +20,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
-    
+
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude module: "junit"
         exclude module: "mockito-core"
@@ -30,7 +30,7 @@ dependencies {
     testImplementation "com.ninja-squad:springmockk:1.1.2"
 }
 
-test{
+test {
     useJUnitPlatform()
 }
 

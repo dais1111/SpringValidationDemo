@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class SpringValidationDemoApplication
 
 fun main(args: Array<String>) {
-	runApplication<SpringValidationDemoApplication>(*args)
+    runApplication<SpringValidationDemoApplication>(*args)
 }

@@ -1,6 +1,6 @@
 package com.dais1111.SpringValidationDemo.entity
 
-enum class  Type{
+enum class Type {
     Parent,
     Child
 }

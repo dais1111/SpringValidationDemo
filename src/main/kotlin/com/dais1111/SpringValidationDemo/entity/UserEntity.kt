@@ -13,13 +13,13 @@ import javax.validation.constraints.NotEmpty
         visible = true
 )
 @JsonSubTypes(
-    JsonSubTypes.Type(value = Parent::class, name ="Parent"),
-    JsonSubTypes.Type(value = Child::class, name ="Child")
+        JsonSubTypes.Type(value = Parent::class, name = "Parent"),
+        JsonSubTypes.Type(value = Child::class, name = "Child")
 )
 interface BaseEntity
 
 data class Parent(
-        val type: Type,
+        val type: Type = Type.Parent,
         @field:NotEmpty
         val id: String,
         val name: String? = null,
@@ -31,7 +31,7 @@ data class Parent(
 ) : BaseEntity
 
 data class Child(
-        val type: Type,
+        val type: Type = Type.Child,
         @field:NotEmpty
         val id: String,
         @field:NotEmpty

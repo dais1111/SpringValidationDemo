@@ -31,7 +31,7 @@ class SpringValidationDemoControllerTests {
     }
 
     @Test
-    fun `check getErrorString`(){
+    fun `check getErrorString`() {
         val expect1 = "----invalid----\nobjectName=objA, field=fldA, message=msgA\n"
         val test1 = target.getErrorsString(errorField)
         Assertions.assertEquals(expect1, test1)
