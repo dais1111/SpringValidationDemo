@@ -26,11 +26,56 @@ class SpringValidationDemoController(
             Child(type = Type.Child, id = "C001", parentId = "", name = "Masahiro", age = 20, liveInPrefect = Prefecture.Tokyo)
     )
     val usersJson = arrayOf(
-            "{\"type\":\"Parent\",\"id\":\"C001\",\"name\":\"Dai\",\"age\":30,\"liveInPrefect\":\"Tokyo\",\"premiumFlag\":true,\"premiumPrice\":3990}",
-            "{\"type\":\"Parent\",\"id\":\"\",\"age\":19,\"liveInPrefect\":\"Tokyo\",\"premiumFlag\":false},{\"type\":\"Parent\",\"id\":\"A001\",\"name\":\"Mahiro\",\"age\":2,\"liveInPrefect\":\"Tokyo\",\"premiumFlag\":false}",
-            "{\"type\":\"Parent\",\"id\":\"\",\"name\":\"Mahiro\",\"age\":2,\"liveInPrefect\":\"Tokyo\",\"premiumFlag\":true}",
-            "{\"type\":\"Child\",\"id\":\"C001\",\"parentId\":\"P001\",\"name\":\"Mahiro\",\"age\":2,\"liveInPrefect\":\"Tokyo\",\"premiumFlag\":false}",
-            "{\"type\":\"Child\",\"id\":\"C001\",\"parentId\":\"\",\"name\":\"Masahiro\",\"age\":20,\"liveInPrefect\":\"Tokyo\",\"premiumFlag\":false}"
+            """{
+                "type":"Parent",
+                "id":"C001",
+                "name":"Dai",
+                "age":30,
+                "liveInPrefect":"Tokyo",
+                "premiumFlag":true,
+                "premiumPrice":3990
+            }""",
+            """{
+                "type":"Parent",
+                "id":"",
+                "age":19,
+                "liveInPrefect":"Tokyo",
+                "premiumFlag":false
+            }""",
+            """{
+                "type":"Parent",
+                "id":"A001",
+                "name":"Mahiro",
+                "age":2,
+                "liveInPrefect":"Tokyo",
+                "premiumFlag":false
+            }""",
+            """{
+                "type":"Parent",
+                "id":"",
+                "name":"Mahiro",
+                "age":2,
+                "liveInPrefect":"Tokyo",
+                "premiumFlag":true
+            }""",
+            """{
+                "type":"Child",
+                "id":"C001",
+                "parentId":"P001",
+                "name":"Mahiro",
+                "age":2,
+                "liveInPrefect":"Tokyo",
+                "premiumFlag":false
+            }""",
+            """{
+                "type":"Child",
+                "id":"C001",
+                "parentId":"",
+                "name":"Masahiro",
+                "age":20,
+                "liveInPrefect":"Tokyo",
+                "premiumFlag":false
+            }"""
     )
 
     @GetMapping("/validuser")
@@ -44,8 +89,7 @@ class SpringValidationDemoController(
 
         return if (errors.hasErrors()) {
             getErrorsString(errors)
-        } else {
-            "valid"
+        } else {            "valid"
         }
     }
 
